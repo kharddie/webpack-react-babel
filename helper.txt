@@ -1,0 +1,39 @@
+        "babel-preset-stage-1": "^6.24.1",
+        "babel-preset-stage-2": "^6.24.1",
+        "babel-preset-stage-3": "^6.24.1",
+		
+		
+		
+		/*https://scotch.io/tutorials/setup-a-react-environment-using-webpack-and-babel*/
+		
+		
+		
+		
+		
+		
+		
+		
+		Invalid configuration object. Webpack has been initialised using a configuration object that does not match the API schema.configuration.module has an unknown property 'loaders'. These properties are valid:
+		
+		
+		https://survivejs.com/webpack/developing/getting-started/
+		
+		
+		
+:::::::::CDM:::::::::;
+C:\webdev\reactjs>c:\webdev\reactjs/node_modules/.bin/webpack --mode development  ==  "build": "webpack --mode production"
+
+webpack watch modenpm run build -- --watch
+
+
+
+
+:::::::::webpack:::::::: definations::::::
+https://css-tricks.com/introduction-webpack-entry-output-loaders-plugins/
+
+
+		
+		
+		
+		
+		
