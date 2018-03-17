@@ -1,8 +1,10 @@
 body {
-  background: cornsilk;
+  /*th is a comment here */
+  background: rgb(145, 124, 219);
   background-image: url("/src/images/logo2.png");
   background-repeat: no-repeat;
   background-position: center;
+
 
   display: flex;
   }

@@ -1,0 +1,162 @@
+{
+  "html-webpack-plugin for \"index.html\"": [
+    {
+      "modules": {
+        "byIdentifier": {
+          "node_modules/html-webpack-plugin/lib/loader.js!node_modules/html-webpack-plugin/default_index.ejs": "./node_modules/html-webpack-plugin/lib/loader.js!./node_modules/html-webpack-plugin/default_index.ejs",
+          "node_modules/lodash/lodash.js": "./node_modules/lodash/lodash.js",
+          "node_modules/webpack/buildin/global.js": "./node_modules/webpack/buildin/global.js",
+          "node_modules/webpack/buildin/module.js": "./node_modules/webpack/buildin/module.js"
+        },
+        "usedIds": {
+          "./node_modules/html-webpack-plugin/lib/loader.js!./node_modules/html-webpack-plugin/default_index.ejs": "./node_modules/html-webpack-plugin/lib/loader.js!./node_modules/html-webpack-plugin/default_index.ejs",
+          "./node_modules/lodash/lodash.js": "./node_modules/lodash/lodash.js",
+          "./node_modules/webpack/buildin/global.js": "./node_modules/webpack/buildin/global.js",
+          "./node_modules/webpack/buildin/module.js": "./node_modules/webpack/buildin/module.js"
+        }
+      },
+      "chunks": {
+        "byName": {},
+        "bySource": {},
+        "usedIds": [
+          0
+        ]
+      }
+    }
+  ],
+  "extract-text-webpack-plugin node_modules/extract-text-webpack-plugin/dist node_modules/css-loader/index.js??ref--5-2!node_modules/postcss-loader/lib/index.js??ref--5-3!src/main.css": [
+    {
+      "modules": {
+        "byIdentifier": {
+          "node_modules/css-loader/index.js??ref--5-2!node_modules/postcss-loader/lib/index.js??ref--5-3!src/main.css": "./node_modules/css-loader/index.js??ref--5-2!./node_modules/postcss-loader/lib/index.js??ref--5-3!./src/main.css",
+          "node_modules/css-loader/lib/css-base.js": "./node_modules/css-loader/lib/css-base.js"
+        },
+        "usedIds": {
+          "./node_modules/css-loader/index.js??ref--5-2!./node_modules/postcss-loader/lib/index.js??ref--5-3!./src/main.css": "./node_modules/css-loader/index.js??ref--5-2!./node_modules/postcss-loader/lib/index.js??ref--5-3!./src/main.css",
+          "./node_modules/css-loader/lib/css-base.js": "./node_modules/css-loader/lib/css-base.js"
+        }
+      },
+      "chunks": {
+        "byName": {},
+        "bySource": {},
+        "usedIds": [
+          1
+        ]
+      }
+    }
+  ],
+  "extract-text-webpack-plugin node_modules/extract-text-webpack-plugin/dist node_modules/css-loader/index.js??ref--5-2!node_modules/postcss-loader/lib/index.js??ref--5-3!node_modules/purecss/build/pure-min.css": [
+    {
+      "modules": {
+        "byIdentifier": {
+          "node_modules/css-loader/index.js??ref--5-2!node_modules/postcss-loader/lib/index.js??ref--5-3!node_modules/purecss/build/pure-min.css": "./node_modules/css-loader/index.js??ref--5-2!./node_modules/postcss-loader/lib/index.js??ref--5-3!./node_modules/purecss/build/pure-min.css",
+          "node_modules/css-loader/lib/css-base.js": "./node_modules/css-loader/lib/css-base.js"
+        },
+        "usedIds": {
+          "./node_modules/css-loader/index.js??ref--5-2!./node_modules/postcss-loader/lib/index.js??ref--5-3!./node_modules/purecss/build/pure-min.css": "./node_modules/css-loader/index.js??ref--5-2!./node_modules/postcss-loader/lib/index.js??ref--5-3!./node_modules/purecss/build/pure-min.css",
+          "./node_modules/css-loader/lib/css-base.js": "./node_modules/css-loader/lib/css-base.js"
+        }
+      },
+      "chunks": {
+        "byName": {},
+        "bySource": {},
+        "usedIds": [
+          1
+        ]
+      }
+    }
+  ],
+  "modules": {
+    "byIdentifier": {
+      "node_modules/fbjs/lib/EventListener.js": "./node_modules/fbjs/lib/EventListener.js",
+      "node_modules/fbjs/lib/ExecutionEnvironment.js": "./node_modules/fbjs/lib/ExecutionEnvironment.js",
+      "node_modules/fbjs/lib/containsNode.js": "./node_modules/fbjs/lib/containsNode.js",
+      "node_modules/fbjs/lib/emptyFunction.js": "./node_modules/fbjs/lib/emptyFunction.js",
+      "node_modules/fbjs/lib/emptyObject.js": "./node_modules/fbjs/lib/emptyObject.js",
+      "node_modules/fbjs/lib/focusNode.js": "./node_modules/fbjs/lib/focusNode.js",
+      "node_modules/fbjs/lib/getActiveElement.js": "./node_modules/fbjs/lib/getActiveElement.js",
+      "node_modules/fbjs/lib/isNode.js": "./node_modules/fbjs/lib/isNode.js",
+      "node_modules/fbjs/lib/isTextNode.js": "./node_modules/fbjs/lib/isTextNode.js",
+      "node_modules/fbjs/lib/shallowEqual.js": "./node_modules/fbjs/lib/shallowEqual.js",
+      "node_modules/object-assign/index.js": "./node_modules/object-assign/index.js",
+      "node_modules/extract-text-webpack-plugin/dist/loader.js??ref--5-0!node_modules/style-loader/index.js!node_modules/css-loader/index.js??ref--5-2!node_modules/postcss-loader/lib/index.js??ref--5-3!node_modules/purecss/build/pure-min.css": "./node_modules/purecss/build/pure-min.css",
+      "node_modules/react-dom/cjs/react-dom.production.min.js": "./node_modules/react-dom/cjs/react-dom.production.min.js",
+      "node_modules/react-dom/index.js": "./node_modules/react-dom/index.js",
+      "node_modules/react/cjs/react.production.min.js": "./node_modules/react/cjs/react.production.min.js",
+      "node_modules/react/index.js": "./node_modules/react/index.js",
+      "node_modules/babel-loader/lib/index.js!src/index.js a00dca81bfdc649da5f1b6a302c3f4f0": "./src/index.js",
+      "node_modules/babel-loader/lib/index.js!src/lazy.js": "./src/lazy.js",
+      "node_modules/extract-text-webpack-plugin/dist/loader.js??ref--5-0!node_modules/style-loader/index.js!node_modules/css-loader/index.js??ref--5-2!node_modules/postcss-loader/lib/index.js??ref--5-3!src/main.css": "./src/main.css",
+      "node_modules/babel-loader/lib/index.js!src/another.js": "./src/another.js",
+      "node_modules/babel-loader/lib/index.js!src/component.js": "./src/component.js",
+      "node_modules/babel-loader/lib/index.js!src/index.js f0f4a0f73f582127c4ddcb9344148379": "./src/index.js"
+    },
+    "usedIds": {
+      "./node_modules/fbjs/lib/EventListener.js": "./node_modules/fbjs/lib/EventListener.js",
+      "./node_modules/fbjs/lib/ExecutionEnvironment.js": "./node_modules/fbjs/lib/ExecutionEnvironment.js",
+      "./node_modules/fbjs/lib/containsNode.js": "./node_modules/fbjs/lib/containsNode.js",
+      "./node_modules/fbjs/lib/emptyFunction.js": "./node_modules/fbjs/lib/emptyFunction.js",
+      "./node_modules/fbjs/lib/emptyObject.js": "./node_modules/fbjs/lib/emptyObject.js",
+      "./node_modules/fbjs/lib/focusNode.js": "./node_modules/fbjs/lib/focusNode.js",
+      "./node_modules/fbjs/lib/getActiveElement.js": "./node_modules/fbjs/lib/getActiveElement.js",
+      "./node_modules/fbjs/lib/isNode.js": "./node_modules/fbjs/lib/isNode.js",
+      "./node_modules/fbjs/lib/isTextNode.js": "./node_modules/fbjs/lib/isTextNode.js",
+      "./node_modules/fbjs/lib/shallowEqual.js": "./node_modules/fbjs/lib/shallowEqual.js",
+      "./node_modules/object-assign/index.js": "./node_modules/object-assign/index.js",
+      "./node_modules/purecss/build/pure-min.css": "./node_modules/purecss/build/pure-min.css",
+      "./node_modules/react-dom/cjs/react-dom.production.min.js": "./node_modules/react-dom/cjs/react-dom.production.min.js",
+      "./node_modules/react-dom/index.js": "./node_modules/react-dom/index.js",
+      "./node_modules/react/cjs/react.production.min.js": "./node_modules/react/cjs/react.production.min.js",
+      "./node_modules/react/index.js": "./node_modules/react/index.js",
+      "./src/index.js": "./src/index.js",
+      "./src/lazy.js": "./src/lazy.js",
+      "./src/main.css": "./src/main.css",
+      "./src/another.js": "./src/another.js",
+      "./src/component.js": "./src/component.js"
+    }
+  },
+  "chunks": {
+    "byName": {
+      "manifest": 1,
+      "vendor": 2,
+      "main": 3,
+      "app": 4,
+      "another": 3
+    },
+    "bySource": {
+      "0 node_modules/babel-loader/lib/index.js!src/component.js ./lazy": 0
+    },
+    "usedIds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  "html-webpack-plugin for \"another\\index.html\"": [
+    {
+      "modules": {
+        "byIdentifier": {
+          "node_modules/html-webpack-plugin/lib/loader.js!node_modules/html-webpack-plugin/default_index.ejs": "./node_modules/html-webpack-plugin/lib/loader.js!./node_modules/html-webpack-plugin/default_index.ejs",
+          "node_modules/lodash/lodash.js": "./node_modules/lodash/lodash.js",
+          "node_modules/webpack/buildin/global.js": "./node_modules/webpack/buildin/global.js",
+          "node_modules/webpack/buildin/module.js": "./node_modules/webpack/buildin/module.js"
+        },
+        "usedIds": {
+          "./node_modules/html-webpack-plugin/lib/loader.js!./node_modules/html-webpack-plugin/default_index.ejs": "./node_modules/html-webpack-plugin/lib/loader.js!./node_modules/html-webpack-plugin/default_index.ejs",
+          "./node_modules/lodash/lodash.js": "./node_modules/lodash/lodash.js",
+          "./node_modules/webpack/buildin/global.js": "./node_modules/webpack/buildin/global.js",
+          "./node_modules/webpack/buildin/module.js": "./node_modules/webpack/buildin/module.js"
+        }
+      },
+      "chunks": {
+        "byName": {},
+        "bySource": {},
+        "usedIds": [
+          0
+        ]
+      }
+    }
+  ]
+}

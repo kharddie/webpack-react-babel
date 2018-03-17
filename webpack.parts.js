@@ -1,4 +1,6 @@
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const PurifyCSSPlugin = require("purifycss-webpack");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 const webpack = require("webpack");
@@ -22,6 +24,9 @@ exports.devServer = ({ host, port } = {}) => ({
 });
 
 //loads css but its embedded in js
+/* goes through possible @import and url() lookups within the matched files and treats them as a regular ES2015 import
+style-loader injects the styling through a style element*/
+
 exports.loadCSS = ({ include, exclude } = {}) => ({
     module: {
         rules: [
@@ -42,8 +47,10 @@ exports.extractCSS = ({ include, exclude, use }) => {
     const plugin = new ExtractTextPlugin({
         // `allChunks` is needed to extract from extracted chunks as well.
         allChunks: true,
-        filename: "[name].css",
+        filename: "[name].[contenthash:8].css",
+
     });
+
 
     return {
         module: {
@@ -60,7 +67,15 @@ exports.extractCSS = ({ include, exclude, use }) => {
                 },
             ],
         },
-        plugins: [plugin],
+        plugins: [
+            plugin,
+            new OptimizeCssAssetsPlugin({
+                assetNameRegExp: /\.optimize\.css$/g,
+                cssProcessor: require('cssnano'),
+                cssProcessorOptions: { discardComments: { removeAll: true } },
+                canPrint: true
+            })
+        ]
     }
 };
 
@@ -146,8 +161,31 @@ exports.setFreeVariable = (key, value) => {
 
 exports.attachRevision = () => ({
     plugins: [
-      new webpack.BannerPlugin({
-        banner: new GitRevisionPlugin().version(),
-      }),
+        new webpack.BannerPlugin({
+            banner: new GitRevisionPlugin().version(),
+        }),
     ],
-  });
+});
+
+
+exports.page = (
+    {
+        path = "",
+        template = require.resolve(
+            "html-webpack-plugin/default_index.ejs"
+        ),
+        title,
+        entry,
+        chunks,
+
+    } = {}
+) => ({
+    entry,
+    plugins: [
+        new HtmlWebpackPlugin({
+            chunks,
+            filename: `${path && path + "/"}index.html`,
+            title,
+        }),
+    ],
+});

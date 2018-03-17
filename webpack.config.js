@@ -1,3 +1,4 @@
+const webpack = require("webpack");
 const merge = require("webpack-merge");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
@@ -20,28 +21,63 @@ var webpackConfig = {
     plugins: [
         new FriendlyErrorsWebpackPlugin(),
     ],
-    // ... 
 }
 
 
 const commonConfig = merge([
+    /* {
+         plugins: [
+             new HtmlWebpackPlugin({
+                 title: "Webpack demo"
+             }),
+         ],
+     },
+     */
+
     {
-        plugins: [
-            new HtmlWebpackPlugin({
-                title: "Webpack demo",
-            }),
-        ],
+        output: {
+            // Needed for code splitting to work in nested paths
+            publicPath: "/",
+        },
     },
+
     parts.loadJavaScript({ include: PATHS.app }),
     parts.setFreeVariable("HELLO", "hello from config"),
 
 ]);
 
 //::::PRODUCTION::::
+
 const productionConfig = merge([
+    /*
+        {
+            performance: {
+              hints: "warning", // "error" or false are valid too
+              maxEntrypointSize: 50000, // in bytes, default 250k
+              maxAssetSize: 450000, // in bytes
+            },
+          },
+    */
+    {
+        output: {
+            chunkFilename: "[name].[chunkhash:8].js",
+            filename: "[name].[chunkhash:8].js",
+        },
+        plugins: [new webpack.NamedModulesPlugin()],
+    },
+
+
     parts.extractCSS({
-        use: ["css-loader", parts.autoprefix()],
+        use: [
+
+            {
+                loader: 'css-loader', options: { minimize: true },
+
+            },
+            parts.autoprefix()
+        ],
     }),
+
 
     parts.purifyCSS({
         paths: glob.sync(`${PATHS.app}/**/*.js`, { nodir: true }),
@@ -50,7 +86,7 @@ const productionConfig = merge([
     parts.loadImages({
         options: {
             limit: 15000,
-            name: "file-loader?[name].[ext]",
+            name: "[name].[hash:8].[ext]",
         },
     }),
     parts.generateSourceMaps({ type: "source-map" }),
@@ -66,7 +102,11 @@ const productionConfig = merge([
                     },
                 },
             },
+            runtimeChunk: {
+                name: "manifest",
+            },
         },
+        recordsPath: path.join(__dirname, "records.json"),
     },
     parts.clean(PATHS.build),
     parts.attachRevision(),
@@ -88,23 +128,45 @@ const developmentConfig = merge([
 
     parts.minifyCSS({
         options: {
-            discardComments: {
-                removeAll: true,
-            },
+            discardComments: { removeAll: true, },
+
             // Run cssnano in safe mode to avoid
             // potentially unsafe transformations.
             safe: true,
+            minimize: true || {/* CSSNano Options */ }
         },
     }),
 ]);
 
+
+
+
 module.exports = mode => {
-    process.env.BABEL_ENV = mode;
+    const pages = [
+        parts.page({
+            title: "Webpack demo",
+            entry: {
+                app: PATHS.app,
+            },
 
-    if (mode === "production") {
-        return merge(commonConfig, productionConfig, { mode });
-    }
+            chunks: ["app", "manifest", "vendor"],
 
-    return merge(commonConfig, developmentConfig, { mode });
+        }),
+        parts.page({
+            title: "Another demo",
+            path: "another",
+            entry: {
+                another: path.join(PATHS.app, "another.js"),
+            },
+
+            chunks: ["another", "manifest", "vendor"],
+
+        }),
+    ];
+    const config =
+        mode === "production" ? productionConfig : developmentConfig;
+
+        return merge([commonConfig, config, { mode }].concat(pages));
+
 };
 
